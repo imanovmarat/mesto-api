@@ -6,7 +6,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const { celebrate, Joi, errors } = require('celebrate');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, MONGO_PASS } = process.env;
+
 const router = require('./routes/index');
 
 const { createUser, login } = require('./controllers/users');
@@ -15,7 +16,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/mestodb', {
+mongoose.connect(`mongodb+srv://adminus:${MONGO_PASS}@cluster0.k9clm.mongodb.net/mesto?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
