@@ -27,13 +27,13 @@ app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(requestLogger);
-app.post('/signin', celebrate({
+app.post('/api/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     password: Joi.string().required().min(8),
   }).unknown(true),
 }), login);
-app.post('/signup', celebrate({
+app.post('/api/signup', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     password: Joi.string().required().min(8),
