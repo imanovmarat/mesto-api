@@ -3,9 +3,9 @@ const users = require('./users');
 const cards = require('./cards');
 const NotFoundError = require('../errors/not-found-err');
 
-router.use('/api/', users);
-router.use('/api/', cards);
-router.use('/api/*', (req, res, next) => {
+router.use('/', users);
+router.use('/', cards);
+router.use('*', (req, res, next) => {
   next(new NotFoundError('Запрашиваемый ресурс не найден'));
 });
 
