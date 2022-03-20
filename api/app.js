@@ -8,7 +8,7 @@ const { celebrate, Joi, errors } = require('celebrate');
 
 const { PORT = 3000, MONGO_PASS } = process.env;
 
-const router = require('./routes/index');
+const router = require('./routes');
 
 const { createUser, login } = require('./controllers/users');
 const auth = require('./middlewares/auth');
