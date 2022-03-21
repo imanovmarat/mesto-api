@@ -23,13 +23,7 @@ mongoose.connect(`mongodb+srv://adminus:${MONGO_PASS}@cluster0.k9clm.mongodb.net
   useUnifiedTopology: true,
 });
 
-const allowedCors = {
-  origin:'https://mesto-project.vercel.app',
-  optionsSuccessStatus: 200
-
-};
-
-app.use(cors(allowedCors));
+// app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(requestLogger);
