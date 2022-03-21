@@ -23,7 +23,7 @@ mongoose.connect(`mongodb+srv://adminus:${MONGO_PASS}@cluster0.k9clm.mongodb.net
   useUnifiedTopology: true,
 });
 
-// app.use(cors());
+app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(requestLogger);
